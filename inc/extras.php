@@ -180,6 +180,8 @@ if ( ! function_exists( 'sparkling_featured_slider' ) ) :
 	 * Featured image slider, displayed on front page for static page and blog
 	 */
 	function sparkling_featured_slider() {
+		// TODO - MODIFY THIS FUNCTION
+		
 		if ( is_front_page() && of_get_option( 'sparkling_slider_checkbox' ) == 1 ) {
 			echo '<div class="flexslider">';
 			echo '<ul class="slides">';
@@ -188,25 +190,26 @@ if ( ! function_exists( 'sparkling_featured_slider' ) ) :
 			$slidecat = of_get_option( 'sparkling_slide_categories' );
 
 			$query = new WP_Query(
-				array(
-					'cat'            => $slidecat,
+				[
+					'post_type'      => 'sp_rt_featslider',
 					'posts_per_page' => $count,
-					'meta_query'     => array(
-						array(
+					'meta_query'     => [
+						[
 							'key'     => '_thumbnail_id',
 							'compare' => 'EXISTS',
-						),
-					),
-				)
+						],
+					],
+				]
 			);
 			if ( $query->have_posts() ) :
 				while ( $query->have_posts() ) :
 					$query->the_post();
-
-					if ( of_get_option( 'sparkling_slider_link_checkbox', 1 ) == 1 ) {
-						echo '<li><a href="' . get_permalink() . '">';
+					
+					$url = get_post_meta(get_the_ID(), 'rt_url', true);
+					if ( of_get_option( 'sparkling_slider_link_checkbox', 1 ) == 1 && !empty($url) ) {
+						echo "<li><a href=\"{$url}\">";
 					} else {
-						echo '<li>';
+						echo '<li><a>';
 					}
 
 					if ( ( function_exists( 'has_post_thumbnail' ) ) && ( has_post_thumbnail() ) ) :
@@ -245,7 +248,7 @@ endif;
  */
 function sparkling_footer_info() {
 	global $sparkling_footer_info;
-	printf( esc_html__( 'Theme by %1$s Powered by %2$s', 'sparkling' ), '<a href="http://colorlib.com/" target="_blank">Colorlib</a>', '<a href="http://wordpress.org/" target="_blank">WordPress</a>' );
+	printf( esc_html__( 'Hello from London. %1$s.', 'sparkling' ), '<a href="https://github.com/revivetoday/sparkling" target="_blank">Theme Details</a>' );
 }
 
 

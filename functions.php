@@ -599,6 +599,30 @@ function sparkling_get_attachment_image() {
 	die();
 }
 
+// ReviveToday - Register slider post type. Replaces category-based post implementation with
+//               a CPT-based version for finer controls, and not being content-based.
+function sparkling_rt_register_slider_post_type() {
+	return register_post_type( 'sp_rt_featslider', [
+		'label'               => __( "Sliders", 'sparkling' ),
+		'description'         => __( "Featured items slider entries", 'sparkling' ),
+		'supports'            => ['title', 'editor', 'custom-fields', 'thumbnail'],
+		'hierarchical'        => false,
+		'public'              => false,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'menu_position'       => 27,
+		'menu_icon'           => 'dashicons-id-alt',
+		'show_in_admin_bar'   => true,
+		'show_in_nav_menus'   => true,
+		'can_export'          => true,
+		'has_archive'         => false,
+		'exclude_from_search' => true,
+		'publicly_queryable'  => false,
+		'rewrite'             => false
+	]);
+}
+add_action( 'init', 'sparkling_rt_register_slider_post_type');
+
 // Add epsilon framework
 require get_template_directory() . '/inc/libraries/epsilon-framework/class-epsilon-autoloader.php';
 $epsilon_framework_settings = array(
