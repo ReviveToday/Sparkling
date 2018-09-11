@@ -86,3 +86,4 @@ if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && ( strpos( $_SERVER['HTTP_USER_AGENT
 			<?php $layout_class = get_layout_class(); ?>
 			<div class="row <?php echo $layout_class; ?>">
 				<div class="main-content-inner <?php echo sparkling_main_content_bootstrap_classes(); ?>">
+					<?php if (function_exists('the_ad_placement')) { the_ad_placement('above-title'); }
