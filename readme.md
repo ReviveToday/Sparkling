@@ -9,6 +9,21 @@ Slider uses WordPress CPT in-built custom fields, which can be a bit hap-hazard.
 
 Slider uses the custom post type `sp_rt_featslider`.
 
+Theme Name: Sparkling
+Theme URI: http://colorlib.com/wp/sparkling/
+Version: 2.4.5
+Tested up to: WP 4.9
+
+Author: Aigars Silkalns
+Author URI: http://colorlib.com/wp/
+License: GNU General Public License v3.0
+License URI: https://www.gnu.org/licenses/gpl.html
+-------------------------------------------------------
+Sparkling theme, Copyright 2014-2018 colorlib.com
+Sparkling WordPress theme is distributed under the terms of the GNU GPL
+Sparkling is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+-------------------------------------------------------
+
 # Credits
 This theme is a fork of [Sparkling by ColorLib](https://colorlib.com/wp/themes/sparkling/), a fantastic libre theme which 
 I completely recommend checking out.
