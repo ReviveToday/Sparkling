@@ -569,7 +569,7 @@ if ( ! function_exists( 'get_layout_class' ) ) :
 				$layout_class = of_get_option( 'woo_site_layout', 'full-width' );
 			}
 		} else {
-			$layout_class = of_get_option( 'site_layout', 'side-pull-left' );
+			$layout_class = of_get_option( 'site_layout', 'full-width' );
 		}
 
 		return $layout_class;
