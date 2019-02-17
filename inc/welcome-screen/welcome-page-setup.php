@@ -15,7 +15,7 @@ function sparkling_welcome_customize_register( $wp_customize ) {
 		}
 	}
 
-	$wp_customize->add_section(
+	/*$wp_customize->add_section(
 		new Epsilon_Section_Recommended_Actions(
 			$wp_customize,
 			'epsilon_recomended_section',
@@ -33,7 +33,7 @@ function sparkling_welcome_customize_register( $wp_customize ) {
 				'priority'                     => 0,
 			)
 		)
-	);
+	);*/
 
 	$wp_customize->add_section(
 		new Epsilon_Section_Pro(

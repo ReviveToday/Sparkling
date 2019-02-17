@@ -282,7 +282,7 @@ html[xmlns] .slides {
 
 .flex-caption h2 {
     background: rgb(218, 68, 83);
-    background: rgba(218, 68, 83, 0.7);
+    background: #138E96;
     font-weight: 400;
     font-size: 24px;
     max-width: 640px;
